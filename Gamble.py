@@ -15,7 +15,7 @@ class GambleSimulator:
         self.e = Effect(self)
         pygame.display.set_caption("Gamblecore")
         pygame.mixer.music.load("sounds/gamblecore.mp3")
-        pygame.mixer.music.set_volume(1)
+        pygame.mixer.music.set_volume(100)
         pygame.mixer.music.play(-1)
     def _check_events(self):
         for event in pygame.event.get():
