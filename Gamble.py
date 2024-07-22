@@ -13,6 +13,9 @@ class GambleSimulator:
         self.r = Results(self)
         self.t = Talk(self)
         self.e = Effect(self)
+
+        self.money = 100
+
         pygame.display.set_caption("Gamblecore")
         pygame.mixer.music.load("sounds/gamblecore.mp3")
         pygame.mixer.music.set_volume(100)
@@ -27,9 +30,15 @@ class GambleSimulator:
                     self.r.center_roll()
                     self.r.right_roll()
                     self.t.prep_talk(self.r.left_roll_str, self.r.center_roll_str, self.r.right_roll_str)
+                    if self.t.win == True:
+                        self.money += 110
+                    elif self.t.win == "maybe":
+                        self.money += 30
+                    self.money -= 10
                     time.sleep(0.3)
     def _update_screen(self):
         self.screen.blit(self.settings.bg, (0,-60))
+        self.t.money(self.money)
         self.r.show_roll()
         self.t.show_talk()
         self.e.draw_effect()
