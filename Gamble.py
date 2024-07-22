@@ -6,11 +6,15 @@ from talk import Talk
 class GambleSimulator:
     def __init__(self):
         pygame.init()
+        pygame.mixer.init()
         self.settings = Settings()
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         self.r = Results(self)
         self.t = Talk(self)
-        pygame.display.set_caption("Slot Machine")
+        pygame.display.set_caption("Gamblecore")
+        pygame.mixer.music.load("sounds/gamblecore.mp3")
+        pygame.mixer.music.set_volume(1)
+        pygame.mixer.music.play(-1)
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

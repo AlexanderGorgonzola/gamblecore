@@ -1,4 +1,5 @@
 import pygame.font
+from pygame import mixer
 import pygame
 import random
 class Results:
@@ -11,6 +12,8 @@ class Results:
         self.left_roll()
         self.center_roll()
         self.right_roll()
+        
+
     def left_roll(self):
         self.left_roll_str = str(random.randint(1,9))
         self.left_roll_image = self.font.render(self.left_roll_str, True, self.text_color, (255,255,255))
