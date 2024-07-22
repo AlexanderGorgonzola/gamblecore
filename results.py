@@ -36,3 +36,16 @@ class Results:
         self.screen.blit(self.left_roll_image, self.left_roll_rect)
         self.screen.blit(self.right_roll_image, self.right_roll_rect)
         self.screen.blit(self.center_roll_image, self.center_roll_rect)
+
+class Effect:
+    def __init__(self, gs_game):
+        self.screen = gs_game.screen
+        self.screen_rect = self.screen.get_rect()
+        self.prep_effect()
+    
+    def prep_effect(self):
+        self.effect = pygame.image.load("images/effect.png")
+        self.effect_rect = self.effect.get_rect()
+        self.effect_rect.center = self.screen_rect.center
+    def draw_effect(self):
+        self.screen.blit(self.effect, self.effect_rect)
