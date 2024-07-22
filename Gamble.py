@@ -20,9 +20,9 @@ class GambleSimulator:
                     self.r.left_roll()
                     self.r.center_roll()
                     self.r.right_roll()
-                    self.t.prep_talk()
+                    self.t.prep_talk(self.r.left_roll_str, self.r.center_roll_str, self.r.right_roll_str)
     def _update_screen(self):
-        self.screen.fill(self.settings.bg_color)
+        self.screen.blit(self.settings.bg, (0,-60))
         self.r.show_roll()
         self.t.show_talk()
         pygame.display.flip()
