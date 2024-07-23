@@ -14,7 +14,7 @@ class GambleSimulator:
         self.t = Talk(self)
         self.e = Effect(self)
 
-        self.money = 100
+        self.money = 500
 
         pygame.display.set_caption("Gamblecore")
         pygame.mixer.music.load("sounds/gamblecore.mp3")

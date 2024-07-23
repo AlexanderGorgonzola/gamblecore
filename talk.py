@@ -15,7 +15,7 @@ class Talk:
         self.results = Results(self)
         self.prep_talk(self.results.left_roll_str, self.results.center_roll_str, self.results.right_roll_str)
         self.info()
-        self.money(100)
+        self.money(500)
         self.win = False
 
         self.win = pygame.mixer.Sound("sounds/win.mp3")
